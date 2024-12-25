@@ -85,11 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tabs[0].style.display = 'block';
 });
 
-window.addEventListener('scroll', function() {
-  let background = document.querySelector('.background img');
-  let offset = window.pageYOffset; // Получаем смещение прокрутки страницы
-  background.style.transform = 'translateY(' + offset * -0.6 + 'px)'; // Двигаем изображение с меньшей скоростью
-});
+
 // Функция для добавления и удаления класса подсветки
 function highlightCard(card) {
   // Если карточка уже подсвечена, снимаем подсветку
