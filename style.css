@@ -76,7 +76,9 @@ h2 {
     margin-bottom: 30px;
     text-align: center;
 }
-
+p{
+     text-align: center;
+}
 /* Карточки товаров */
 .card {
     display: flex;
