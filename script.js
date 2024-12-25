@@ -4,9 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("purchase-modal");
     const modalProductName = document.getElementById("modal-product-name");
     const modalProductPrice = document.getElementById("modal-product-price");
+    const modalsrc = document.getElementById("modal-src"); 
+    const modalbutton = document.getElementById("modal-button");
     const cancelPurchaseButton = document.getElementById("cancel-purchase");
     const buyButtons = document.querySelectorAll(".buy-button");
 
+
+
+    
+
+    
     // Переключение вкладок
     tabs.forEach(tab => {
         tab.addEventListener("click", event => {
@@ -31,10 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
     buyButtons.forEach(button => {
         button.addEventListener("click", () => {
             const product = button.getAttribute("data-product");
-            const price = button.getAttribute("data-price") + "₽";
+            const price = button.getAttribute("data-price");
+            const src = button.getAttribute("data-src");
+            const button = button.getAttribute("button");
 
+    
             modalProductName.textContent = `Товар: ${product}`;
             modalProductPrice.textContent = `Цена: ${price}`;
+            modalsrc.textContent = `${src}`;
+            modalbutton.textContent = `${button}`;
 
             modal.style.display = "flex";
         });
