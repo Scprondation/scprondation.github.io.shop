@@ -3,118 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>каталог товаров</title>
+    <title>Каталог товаров</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
 <!-- Задний фон с анимацией -->
-
-    <div class="background"><img src=""></div>
+<div class="background"><img src="images/fon.png"></div>
     
-    <!-- Header с навигацией -->
-    
+<!-- Header с навигацией -->
 <header>
-        <div class="container">
-            <h1>каталог товаров</h1>
-            <nav>
-                <a href="#minecraft-tab">Minecraft</a>
-                <a href="#geometry-tab">Geometry Dash</a>
-            </nav>
-        </div>
-    </header>
-    ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
-    
-    <!-- Main Content -->
-    <main>
-        <!-- Вкладка Minecraft -->
-        <section id="minecraft-tab" class="tab active">
-            <h2>Покупка проходки на Minecraft сервер</h2>
-            <p>
- 
-ВАЖНО!!! проходка действует только на 1 сезон. Каждые 3 месяца голосование(завершать сезон?), если сезон идёт 12 месяцев он заканчивается.</p>
-           <div class="moderator-options"> ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
-            <div class="card">
-                    <img src="images/minecraft.png" class="logo" >
-                                       <h3>проходка</h3>
-                    <p>Цена: 250₽</p>
-                    <button class="buy-button" data-button="перейти в тг"  data-src="" data-product="проходка на сервер" data-price="250">Купить</button>
-                </div>
-                ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
-                
-                <div class="card">
-                    <img src="images/minecraft.png" class="logo" >
-                    <h3>сервер на 1.8.8</h3>
-                    <p>Цена: бесплатно</p>
-                    <button class="buy-button" data-button="далее"  data-src="" data-product="сервер 1.8.8" data-price="бесплатно">Купить</button>
-                </div>
-                ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
-                
-                <div class="card">
-                    <img src="images/minecraft.png" class="logo" >
-                    <h3>сервер на 1.21.0 </h3>
-                    <p>Цена: бесплатно</p>
-                    <button class="buy-button" data-button="далее"   data-src="" data-product="сервер 1.21.0" data-price="бесплатно">Купить</button>
-                </div>
-            </div></div>
-        </section>
-
-ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
-        <!-- Вкладка Geometry Dash -->
-        <section id="geometry-tab" class="tab">
-            <h2>Покупка статуса модератора на SCP 2</h2>
-            <p>Выберите тип модератора:</p>
-            <div class="moderator-options">
-                ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
-                <div class="card">
-                    <img src="images/m1.png" class="logo" >
-                                       <h3>medium</h3>
-                    <p>Цена: 200₽</p>
-                    <button class="buy-button" data-button="перейти в тг" data-src="" data-product="Младший модератор" data-price="200">Купить</button>
-                </div>
-                ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
-                
-                <div class="card">
-                    <img src="images/m2.png" class="logo" >
-                    <h3>old</h3>
-                    <p>Цена: 400₽</p>
-                    <button class="buy-button" data-button="перейти в тг"  data-src="" data-product="Старший модератор" data-price="400">Купить</button>
-                </div>
-                ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
-                
-                <div class="card">
-                    <img src="images/m3.png" class="logo" >
-                    <h3>Yltra </h3>
-                    <p>Цена: 1000₽</p>
-                    <button class="buy-button" data-button="перейти в тг"  data-src="" data-product="Модератор с функциями владельца" data-price="1000">Купить</button>
-                </div>
-            </div>
-        </section>
-        
-        
-        
-        
-        
-       
-
-    </main>
-
-   
-
-
-    <!-- Modal для подтверждения покупки -->
-    <div id="purchase-modal" class="modal">
-        <div class="modal-content">
-            <h3>Вы уверены, что хотите купить?
-            </h3>
-            <p id="modal-product-name"></p>
-            <p id="modal-product-price"></p>
-            <p>средства нельзя будет вернуть.</p>
-            <button src="https://t.me/Scprondation"> <p id="modal-button"></p> </button>
-            <button id="cancel-purchase">Отменить</button>
-        </div>
+    <div class="container">
+        <h1>Каталог товаров</h1>
+        <nav>
+            <a href="#minecraft-tab" class="tab-link" data-tab="minecraft-tab">Minecraft</a>
+            <a href="#geometry-tab" class="tab-link" data-tab="geometry-tab">Geometry Dash</a>
+            <a href="#terms-tab" class="tab-link" data-tab="terms-tab">Условия</a> <!-- Новая ссылка -->
+        </nav>
     </div>
+</header>
+    
+<!-- Main Content -->
+<main>
+  <!-- Minecraft Tab -->
+  <section id="minecraft-tab" class="tab active">
+      <h2>Покупка проходки на Minecraft сервер</h2>
+      <p>ВАЖНО!!! Проходка действует только на 1 сезон. Каждые 3 месяца голосование...</p>
+      <div class="moderator-options">
+          <!-- Платный товар -->
+          <div class="card">
+              <img src="images/minecraft.png" class="logo">
+              <h3>Проходка</h3>
+              <p>Цена: 250₽</p>
+              <button class="buy-button" data-product="Проходка на сервер" data-price="250">Купить</button>
+          </div>
+          
+          <!-- Бесплатный товар с IP адресом -->
+          <div class="card">
+              <img src="images/minecraft.png" class="logo">
+              <h3>Сервер на 1.8.8</h3>
+              <p>Цена: бесплатно</p>
+              <button class="buy-button" data-product="Сервер 1.8.8" data-price="бесплатно" data-ip="123.45.67.89">Далее</button>
+          </div>
+          
+          <!-- Бесплатный товар с IP адресом -->
+          <div class="card">
+              <img src="images/minecraft.png" class="logo">
+              <h3>Сервер на 1.21.0</h3>
+              <p>Цена: бесплатно</p>
+              <button class="buy-button" data-product="Сервер 1.21.0" data-price="бесплатно" data-ip="98.76.54.32">Далее</button>
+          </div>
+      </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Вкладка Geometry Dash -->
+  <section id="geometry-tab" class="tab" style="display: none;">
+      <h2>Покупка статуса модератора на SCP 2</h2>
+      <p>Выберите тип модератора:</p>
+      <div class="moderator-options">
+          <div class="card">
+              <img src="images/m1.png" class="logo">
+              <h3>Medium</h3>
+              <p>Цена: 200₽</p>
+              <button class="buy-button" data-product="Младший модератор" data-price="200">Купить</button>
+          </div>
+          <div class="card">
+              <img src="images/m2.png" class="logo">
+              <h3>Old</h3>
+              <p>Цена: 400₽</p>
+              <button class="buy-button" data-product="Старший модератор" data-price="400">Купить</button>
+          </div>
+          <div class="card">
+              <img src="images/m3.png" class="logo">
+              <h3>Yltra</h3>
+              <p>Цена: 1000₽</p>
+              <button class="buy-button" data-product="Модератор с функциями владельца" data-price="1000">Купить</button>
+          </div>
+      </div>
+  </section>
+
+  <!-- Вкладка Условия использования -->
+  <section id="terms-tab" class="tab" style="display: none;">
+      <h1>Условия использования</h1>
+      <p>Использование данного сайта и покупка товаров осуществляется в соответствии с нижеследующими условиями...</p>      
+      <p>1. Все товары на сайте являются виртуальными и не подлежат возврату</p>
+      <p>2. все покупки происходят в  тг со мной.</p>
+      <p>3. раз в 3 месяца голосования ( окончание сезона? )</p>
+      <p>4. за понижение производительности мы не несём ответственность.</p>
+      <p>будет дополниться</p>
+      <h1>Правила на сервере minecraft</h1>
+      
+<p>1. Читы (бан).</p> 
+<p>2. Материть не желательно (ограничений нет).
+</p>
+<p>3. Пранки над игроками можно, но если игроку не понравился пранк то он может подать в суд на пранкера, пранкер получит наказание (эти наказания не являются блокировкой на сервере).</p>
+<p>
+4. Запрещены бан ворды твича.</p>
+
+<p>5. я всегда прав</p>
+<h1>правила игры на SCP 2</h1>
+<p>Запрещено в уровнях:</p>
+<p>1. свастика</p>
+<p>2. 18+</p>
+<p>3. невозможные уровни</p>
+<p>4. маты в названиях или в коментариях </p>
+<p>5. писать угрозы, 18+ и тд..</p>
+<h1>Моды использовать можно)</h1>
+
+      <!-- Добавьте дополнительные условия по мере необходимости -->
+  </section>
+
+</main>
+
+<!-- Modal для подтверждения покупки -->
+<div id="purchase-modal" class="modal">
+    <div class="modal-content">
+        <h3 id="modal-header">Вы уверены, что хотите купить?</h3>
+        <p id="modal-product-name"></p>
+        <p id="modal-product-price"></p>
+        <div id="modal-additional-info"></div>
+        <a> <button id="modal-button" class="modal-button" target="_blank">Перейти в Telegram</button></a>
+        <button id="cancel-purchase">Отменить</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

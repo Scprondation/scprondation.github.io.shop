@@ -62,11 +62,12 @@ nav a:hover {
 /* Основной контент */
 main {
     padding: 50px 0;
-    background-color: rgba(40,40,40,80%); /* Темно-серый фон для контента */
+    background-color: rgba(40,40,40,60%); /* Темно-серый фон для контента */
     border-radius: 25px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 50px;
     border: 7px solid #00000025
+    margin-top: 30px;
 }
 
 h2 {
@@ -76,24 +77,29 @@ h2 {
     margin-bottom: 30px;
     text-align: center;
 }
-p{
-     text-align: center;
-}
+
 /* Карточки товаров */
 .card {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #444; /* Более светлый серый для карточек */
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #4444448a; /* Более светлый серый для карточек */
+    border-radius: 25px;
+    
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-    
-    
+    height: 85%;        
+  transition: all 0.3s ease; /* Плавный переход для изменений */
+  cursor: pointer;
+  box-shadow: 0 0 10px #7f26e279; /* Легкая тень для карточки */
+}
+
+.card.highlighted {
+  border-color: #8a2be2; /* Фиолетовая обводка */
+  background-color: #7f26e279; /* Фиолетовый фон */
 }
 
 .card img {
@@ -105,7 +111,7 @@ p{
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px #7f26e226;
 }
 
 .card img:hover {
@@ -141,56 +147,83 @@ p{
     transform: scale(1.05);
 }
 
-/* Стили для модального окна */
+/* Простейшие стили для модального окна */
 .modal {
-    display: none;
+    display: none; /* Скрываем по умолчанию */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .modal-content {
-    background-color: #333;
-    padding: 30px;
-    text-align: center;
+    background-color: #444;
+    padding: 20px;
     border-radius: 10px;
     width: 400px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;       
 }
 
-.modal h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #fff;
-    animation: pulse 2s infinite alternate;
+
+/* Стиль для модального окна */
+.modal-content {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование всех элементов внутри модального окна */
+    justify-content: center;
 }
 
-.modal p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #ccc;
-}
-
-.modal button {
-    background-color: #6a4c9c; /* Фиолетовый цвет для кнопки модального окна */
-    color: #fff;
+/* Стили для кнопки "Перейти в Telegram" */
+.modal-button {
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 15px 30px;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
+    margin-top: 20px; /* Добавляем отступ сверху */
     transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%; /* Занимает всю доступную ширину */
 }
 
-.modal button:hover {
-    background-color: #a052c1; /* Светлый фиолетовый при наведении */
-    transform: scale(1.05);
+/* При наведении на кнопку */
+.modal-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Легкое увеличение кнопки при наведении */
 }
+
+/* Отменить покупку кнопка */
+#cancel-purchase {
+    background-color: #ff8a80;
+    margin-top: 10px; /* Добавляем отступ сверху для кнопки отмены */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
 
 #cancel-purchase {
     background-color: #ff8a80;
@@ -279,24 +312,12 @@ nav a {
     padding: 20px;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
-    height: 100%;
+    height: 85%;
     text-decoration: none;
 }
 
-/* Вкладки (для работы с активной вкладкой) */
-.tab {
-    display: none;
-    
-}
-.tab1 {
-    display: none;
-    
-}
 
-.tab.active {
-    display: block;
-    
-}
+
 
 /* Анимация переливания цвета */
 @keyframes pulse {
@@ -402,4 +423,94 @@ nav a.active {
     .card {
         width: 30%; /* Три карточки в ряд */
     }
+}
+
+/* Скрыть все вкладки по умолчанию */
+.tab {
+    display: none;  
+}
+
+/* Показывать только активную вкладку */
+.tab.active {
+    display: block;
+}
+.card {
+    flex-basis: 23%; /* Allows for 4 cards per row on larger screens */
+}
+
+@media (max-width: 1200px) {
+    .card {
+        flex-basis: 48%; /* Allows for 2 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-basis: 100%; /* Stacks cards vertically on smaller screens */
+        margin-top: 15px; /* Reduce space between cards */
+    }
+
+    h1 {
+        font-size: 2rem; /* Reduce heading size */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Reduce subtitle size */
+    }
+
+    nav a {
+        font-size: 1rem; /* Reduce nav link size */
+    }
+
+    .container {
+        width: 95%; /* Make container slightly smaller on small screens */
+    }
+
+    .modal-content {
+        width: 90%; /* Make modal content responsive */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem; /* Further reduce size for very small screens */
+    }
+
+    nav a {
+        font-size: 0.9rem; /* Smaller font for mobile navigation */
+    }
+
+    .card button {
+        padding: 10px 20px; /* Smaller buttons on mobile */
+        font-size: 0.9rem; /* Smaller button text */
+    }
+
+    footer p {
+        font-size: 0.9rem; /* Smaller footer text */
+    }
+}
+
+
+/* Стили для вкладки Условия использования */
+#terms-tab {
+    padding: 20px;
+    background-color: rgba(40,40,40,50%);
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+}
+
+#terms-tab h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#terms-tab p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
