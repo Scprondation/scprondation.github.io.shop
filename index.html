@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>каталог товаров</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<!-- Задний фон с анимацией -->
+
+    <div class="background"><img src="images/fon.png"></div>
+    
+    <!-- Header с навигацией -->
+    
+<header>
+        <div class="container">
+            <h1>каталог товаров</h1>
+            <nav>
+                <a href="#minecraft-tab">Minecraft</a>
+                <a href="#geometry-tab">Geometry Dash</a>
+            </nav>
+        </div>
+    </header>
+    ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Вкладка Minecraft -->
+        <section id="minecraft-tab" class="tab active">
+            <h2>Покупка проходки на Minecraft сервер</h2>
+            <p>
+ 
+ВАЖНО!!! проходка действует только на 1 сезон. Каждые 3 месяца голосование(завершать сезон?), если сезон идёт 12 месяцев он заканчивается.</p>
+            ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
+            <div class="card">
+                <img src="images/minecraft.png" alt="Minecraft Server">
+                <h3>Проходка на сервер</h3>
+                <p>Получите доступ к серверу</p>
+                <button class="buy-button" data-product="Minecraft проходка" data-price="250">Купить проходку</button>
+            </div>
+        </section>
+
+ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
+        <!-- Вкладка Geometry Dash -->
+        <section id="geometry-tab" class="tab">
+            <h2>Покупка статуса модератора на SCP 2</h2>
+            <p>Выберите тип модератора:</p>
+            <div class="moderator-options">
+                ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
+                <div class="card">
+                    <img src="images/m1.png" class="logo" >
+                                       <h3>medium</h3>
+                    <p>Цена: 200₽</p>
+                    <button class="buy-button" data-product="Младший модератор" data-price="200">Купить</button>
+                </div>
+                ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
+                
+                <div class="card">
+                    <img src="images/m2.png" class="logo" >
+                    <h3>old</h3>
+                    <p>Цена: 400₽</p>
+                    <button class="buy-button" data-product="Старший модератор" data-price="400">Купить</button>
+                </div>
+                ᅠᅠᅠᅠᅠᅠᅠᅠᅠᅠ
+                
+                <div class="card">
+                    <img src="images/m3.png" class="logo" >
+                    <h3>Yltra </h3>
+                    <p>Цена: 1000₽</p>
+                    <button class="buy-button" data-product="Модератор с функциями владельца" data-price="1000">Купить</button>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        
+       
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024. Все права защищены.</p>
+             
+        </div>
+    </footer>
+
+    <!-- Modal для подтверждения покупки -->
+    <div id="purchase-modal" class="modal">
+        <div class="modal-content">
+            <h3>Вы уверены, что хотите купить?
+            </h3>
+            <p id="modal-product-name"></p>
+            <p id="modal-product-price"></p>
+            <p>средства нельзя будет вернуть.</p>
+            <button>написать в тг</button>
+            <button id="cancel-purchase">Отменить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

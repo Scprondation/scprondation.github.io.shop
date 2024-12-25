@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Concert One";
+    
+
+    background-color: #2f2f2f; /* Тёмно-серый фон */
+    color: #e0e0e0; /* Светлый текст */
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+-webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+/* Стили для шапки */
+header {
+    background-color: #3b3b3b; /* Темный серый */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+
+    font-size: 2.5rem;
+    font-weight: 700;
+    animation: pulse 2s infinite alternate;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #d6b3ff; /* Фиолетовый цвет для ссылок */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f5a9f2; /* Светлый фиолетовый при наведении */
+}
+
+/* Основной контент */
+main {
+    padding: 50px 0;
+    background-color: rgba(40,40,40,80%); /* Темно-серый фон для контента */
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+    border: 7px solid #00000025
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Карточки товаров */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #444; /* Более светлый серый для карточек */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    
+    
+}
+
+.card img {
+    max-width: 15%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img:hover {
+    transform: scale();
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #d6b3ff; /* Фиолетовый цвет для заголовков карточек */
+    animation: pulse 2s infinite alternate;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: #ccc; /* Более светлый цвет для описаний */
+    margin-bottom: 20px;
+}
+
+.card button {
+    background-color: #6a4c9c; /* Фиолетовый цвет для кнопок */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #a052c1; /* Светлый фиолетовый для кнопок при наведении */
+    transform: scale(1.05);
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #333;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+    animation: pulse 2s infinite alternate;
+}
+
+.modal p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.modal button {
+    background-color: #6a4c9c; /* Фиолетовый цвет для кнопки модального окна */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal button:hover {
+    background-color: #a052c1; /* Светлый фиолетовый при наведении */
+    transform: scale(1.05);
+}
+
+#cancel-purchase {
+    background-color: #ff8a80;
+    margin-left: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #3b3b3b; /* Темный серый для футера */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 50px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Анимация */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Фоновая анимация */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: url('background-image.jpg') center center no-repeat;
+    background-size: cover;
+    z-index: -1; /* Убедимся, что фон будет позади всего контента */
+    will-change: transform;
+    transition: transform 0.5s ease-out;
+}
+/* Добавляем стиль контейнера */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Стили для шапки */
+header {
+    background-color: #3b3b3b;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #d6b3ff; /* Фиолетовый цвет по умолчанию */
+    
+    margin: 0 15px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease; /* Плавный переход цвета */
+    animation: pulse 2s infinite alternate; /* Добавляем анимацию переливания */
+    
+    
+}
+
+/* Карточки товаров */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(50,50,50, 95%);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* Вкладки (для работы с активной вкладкой) */
+.tab {
+    display: none;
+    
+}
+.tab1 {
+    display: none;
+    
+}
+
+.tab.active {
+    display: block;
+    
+}
+
+/* Анимация переливания цвета */
+@keyframes pulse {
+    0% {
+        color: #d6b3ff; /* Фиолетовый */
+    }
+    25% {
+        color: #eabfff; /* Фиолетовый */
+    }
+    50% {
+        color: #f5a9f2; /* Розовый */
+    }
+    75% {
+        color: #eabfff; /* Фиолетовый */
+    }
+    100% {
+        color: #d6b3ff; /* Фиолетовый */
+    }
+}
+/* Эффект нажатия или при наведении */
+nav a:hover,
+nav a.active {
+    color: #f5a9f2; /* Светлый розовый при наведении */
+    font-weight: bold;
+}
+
+.logo{
+    max-width: 25px; 
+    height: auto;
+}
+
+
+ /* Для маленьких экранов (мобильные устройства) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Уменьшаем общий размер шрифта */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Уменьшаем размер заголовка */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem; /* Меньший шрифт для ссылок */
+        margin: 0 10px;
+    }
+
+    .container {
+        width: 95%; /* Увеличиваем ширину для меньших экранов */
+    }
+
+    .card {
+        width: 100%; /* Карточки занимают всю ширину */
+        padding: 15px; /* Уменьшаем отступы */
+    }
+
+    .card img {
+        max-width: 40%; /* Увеличиваем изображение для мобильных */
+    }
+
+    .modal-content {
+        width: 90%; /* Увеличиваем доступное место для модального окна */
+    }
+}
+
+/* Для планшетов (средние экраны) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 15px; /* Чуть больше размер шрифта, чем на мобильных */
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .card {
+        width: 48%; /* Две карточки в ряд */
+        margin-bottom: 20px;
+    }
+
+    .moderator-options {
+        display: flex;
+        flex-wrap: wrap; /* Размещаем карточки на одной линии */
+        gap: 10px;
+    }
+
+    .modal-content {
+        width: 70%;
+    }
+}
+
+/* Для больших экранов (ноутбуки, десктопы) */
+@media (min-width: 1025px) {
+    .moderator-options {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 30%; /* Три карточки в ряд */
+    }
+}
