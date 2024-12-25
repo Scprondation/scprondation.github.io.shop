@@ -258,7 +258,7 @@ footer {
     left: 0;
     width: 100%;
     height: 200%;
-    background: url('background-image.jpg') center center no-repeat;
+    background: url('images/fon.png') center center no-repeat;
     background-size: cover;
     z-index: -1; /* Убедимся, что фон будет позади всего контента */
     will-change: transform;
