@@ -405,7 +405,7 @@ nav a.active {
     .moderator-options {
         display: flex;
         flex-wrap: wrap; /* Размещаем карточки на одной линии */
-        gap: 10%;
+        gap: 1em;
     }
 
     .modal-content {
