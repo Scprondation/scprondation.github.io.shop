@@ -253,7 +253,6 @@ footer {
 }
 /* Фоновая анимация */
 .background {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -263,6 +262,9 @@ footer {
     z-index: -1; /* Убедимся, что фон будет позади всего контента */
     will-change: transform;
     transition: transform 0.5s ease-out;
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
 }
 /* Добавляем стиль контейнера */
 .container {
