@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рандомайзер с шансами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Рандомайзер</h1>
+        <div class="tabs">
+            <button id="tab-participants" class="tab-button active">Участники</button>
+            <button id="tab-random-number" class="tab-button">Случайное число</button>
+        </div>
+
+        <div id="participants-section">
+            <label for="participant-name">Имя участника:</label>
+            <input type="text" id="participant-name" placeholder="Введите имя">
+            <label for="invites">Приглашённые друзья:</label>
+            <input type="number" id="invites" placeholder="Количество друзей">
+            <button id="add-participant">Добавить участника</button>
+            <button id="draw-winner">Рассчитать победителя</button>
+            <ul id="participants-list"></ul>
+            <div id="winner-name"></div>
+        </div>
+
+        <div id="random-number-section" style="display: none;">
+            <label for="min-value">От:</label>
+            <input type="number" id="min-value" placeholder="Минимальное значение">
+            <label for="max-value">До:</label>
+            <input type="number" id="max-value" placeholder="Максимальное значение">
+            <button id="generate-random-number">Генерировать случайное число</button>
+            <div id="random-number-result"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
